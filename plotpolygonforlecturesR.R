@@ -1,0 +1,16 @@
+#PLOTS POLYGONS FOR LECTURE
+x <- c(2, 1, 5, 6, 2)
+y <- c(2,5,5,2, 2)
+m = cbind(x, y)
+par(bg="lightblue",mar=c(2,2,2,2))
+plot(0, 0, type="n", ann=FALSE, axes=FALSE)
+u <- par("usr") # The coordinates of the plot area
+rect(u[1], u[3], u[2], u[4], col="white", border=NA)
+#plot(x, y, col="blue", pch=17, xlim=c(0,7), ylim=c(0,7))
+#par(xaxs='i',yaxs='i', bg="light gray")
+par(new=TRUE)
+plot(x, y, col="dark green", pch=17, xlim=c(0,7), ylim=c(0,7), type="l", lwd=2, asp=1, yaxs="i", xaxs="i")
+axis(1, at=0:7)
+axis(2, at=seq(0,7,by=1))
+points(x, y, col="red", pch=17,cex=2)
+grid(nx=7, ny=7,col="black", lty="dotted")
